@@ -380,6 +380,7 @@ public class StudentDetailsMain {
 						System.out.println("REMOVE SUCCESSFULLY");
 
 					} else if (roll_Number == 3) {
+						
 						list1.remove(objStudent3);
 						System.out.println("REMOVE SUCCESSFULLY");
 
