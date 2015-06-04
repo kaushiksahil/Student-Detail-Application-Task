@@ -82,9 +82,9 @@ public class StudentDetailsMain {
 					objectAddStudent1.setRoll_Number(Integer.parseInt(br
 							.readLine()));
 
-					list1.add(objectAddStudent1);
 					System.out.println("Added successfully!!");
 					objectAddStudent = objectAddStudent1;
+					list1.add(objectAddStudent);
 					break;
 				}
 
@@ -315,7 +315,49 @@ public class StudentDetailsMain {
 							System.out.println("Successfully Modify.....");
 							break;
 						}
-
+						default:
+							System.out.println("Wrong Input!!");
+						}
+					} else if (roll_Number == objectAddStudent.getRoll_Number()) {
+						System.out.println("Which property want to Modify");
+						System.out
+								.println("1. Name\n2. Address\n3. City\n4. Class\n 5. Password");
+						switch (Integer.parseInt(br.readLine())) {
+						case 1: {
+							System.out.println("Enter New Name:");
+							objectAddStudent.setName(br.readLine());
+							list1.set(4, objStudent5);
+							System.out.println("Successfully Modify.....");
+							break;
+						}
+						case 2: {
+							System.out.println("Enter New Address:");
+							objectAddStudent.setAddress(br.readLine());
+							list1.set(4, objStudent5);
+							System.out.println("Successfully Modify.....");
+							break;
+						}
+						case 3: {
+							System.out.println("Enter New City:");
+							objectAddStudent.setCity(br.readLine());
+							list1.set(4, objStudent5);
+							System.out.println("Successfully Modify.....");
+							break;
+						}
+						case 4: {
+							System.out.println("Enter New Class:");
+							objectAddStudent.setStandard(br.readLine());
+							list1.set(4, objStudent5);
+							System.out.println("Successfully Modify.....");
+							break;
+						}
+						case 5: {
+							System.out.println("Enter New Password:");
+							objectAddStudent.setPassword(br.readLine());
+							list1.set(4, objStudent5);
+							System.out.println("Successfully Modify.....");
+							break;
+						}
 						default:
 							System.out.println("Wrong Input!!");
 						}
@@ -324,7 +366,9 @@ public class StudentDetailsMain {
 						System.out.println("Wrong Input");
 					break;
 				}
+
 				case 3: {
+					
 					System.out.println("Enter Roll Number:");
 					roll_Number = Integer.parseInt(br.readLine());
 					if (roll_Number == 1) {
@@ -347,10 +391,11 @@ public class StudentDetailsMain {
 						list1.remove(objStudent5);
 						System.out.println("REMOVE SUCCESSFULLY");
 
-					} else {
+					} else if (roll_Number == objectAddStudent.getRoll_Number()) {
 						list1.remove(objectAddStudent);
 						System.out.println("REMOVE SUCCESSFULLY");
-					}
+					} else
+						System.out.println("Wrong Input");
 					break;
 				}
 				case 4: {
@@ -403,6 +448,17 @@ public class StudentDetailsMain {
 								+ objStudent5.getStandard() + "\t\t"
 								+ objStudent5.getPassword() + "\t\t\t"
 								+ objStudent5.getRoll_Number());
+					}
+
+					else if (roll_Number == objectAddStudent.getRoll_Number()) {
+						System.out
+								.println("Name\t\tAddress\t\tCity\t\tClass\t\tPassword\t\tRoll Number");
+						System.out.println(objectAddStudent.getName() + "\t"
+								+ objectAddStudent.getAddress() + "\t\t"
+								+ objectAddStudent.getCity() + '\t'
+								+ objectAddStudent.getStandard() + "\t\t"
+								+ objectAddStudent.getPassword() + "\t\t\t"
+								+ objectAddStudent.getRoll_Number());
 					} else
 						System.out.println("Wrong Input");
 
